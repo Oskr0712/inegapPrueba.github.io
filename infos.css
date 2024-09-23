@@ -1,0 +1,102 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333333;
+    background-color: #f2f7f4; /* Fondo suave */
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Encabezado */
+header {
+    position: relative;
+    background-color: #39603d; /* Verde opaco */
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-image {
+    height: 80px;
+    width: auto;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+/* Menú de navegación */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #39603d;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #4a7859; /* Hover color más claro */
+}
+
+/* Contenido principal */
+main {
+    padding: 40px;
+    background-color: #e1f1e7; /* Fondo azul-verde claro */
+    color: #333333;
+    text-align: left;
+}
+
+/* Navegación de enlaces de información */
+.info-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-nav ul li {
+    margin: 10px 0;
+}
+
+.info-nav ul li a {
+    text-decoration: none;
+    color: #39603d;
+    background-color: #d1e0e0; /* Fondo azul claro */
+    padding: 15px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.info-nav ul li a:hover {
+    background-color: #b5d4c2; /* Fondo más claro en hover */
+    transform: scale(1.05); /* Aumenta un poco el tamaño */
+}
+
+/* Pie de página */
+footer {
+    background-color: #3c3c3c;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}

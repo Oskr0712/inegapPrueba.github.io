@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Ingreso.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        select, button {
+            padding: 10px;
+            margin-top: 10px;
+        }
+        #info {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <header>
+    <h1>Talleres</h1>
+    <img src="C:/xampp2/htdocs/INEGAP/imagenes/logo.JPG" alt="Logo" class="header-image">
+   
+    <nav>
+        <ul>
+            <li><a href="INEGAP.html">Inicio</a></li>
+        </ul>
+    </nav>
+    </header>
+    <select id="tema">
+        <option value="">--Seleccione un taller--</option>
+        <option value="Metales">Metales</option>
+        <option value="Maderas">Maderas</option>
+        <option value="Corte y confección">Corte y confección</option>
+        <option value="Cocina">Cocina</option>
+        <option value="Horticultura">Horticultura</option>
+        <option value="Repostería">Repostería</option>
+        <option value="Manualidades">Manualidades</option>
+        <option value="Belleza">Belleza</option>
+        <option value="Electricidad">Electricidad</option>
+    </select>
+    
+    <br>
+
+    <button onclick="mostrarInformacion()">Mostrar Información</button>
+
+    <div id="info"></div>
+<script>
+    function mostrarInformacion() {
+        var temaSeleccionado = document.getElementById("tema").value;
+        var info = document.getElementById("info");
+        info.innerHTML = ""; // Limpiar el contenido previo
+    
+        // Si no se selecciona un taller, mostrar un mensaje
+        if (temaSeleccionado === "") {
+            info.innerHTML = "<p>Por favor, seleccione un taller.</p>";
+        } else {
+            var informacion;
+    
+            switch (temaSeleccionado) {
+                case "Metales":
+                    informacion = "<h2>Metales</h2><p>Info de metales</p>";
+                    break;
+                case "Maderas":
+                    informacion = "<h2>Maderas</h2><p>Info madera</p>";
+                    break;
+                case "Corte y confección":
+                    informacion = "<h2>Corte y confección</h2><p>Info Corte y confección</p>";
+                    break;
+                case "Cocina":
+                    informacion = "<h2>Cocina</h2><p>Info cocina</p>";   
+                    break; 
+                case "Horticultura":
+                    informacion = "<h2>Horticultura</h2><p>Info Horticultura</p>";   
+                    break; 
+                case "Repostería":
+                    informacion = "<h2>Repostería</h2><p>Info reposteria</p>";   
+                    break; 
+                case "Manualidades":
+                    informacion = "<h2>Manualidades</h2><p>Info manualidades</p>";  
+                    break; 
+                case "Belleza":
+                    informacion = "<h2>Belleza</h2><p>Info belleza</p>";    
+                    break;
+                case "Electricidad":
+                    informacion = "<h2>Electricidad</h2><p>Info electricidad</p>";    
+                    break; 
+            }
+    
+            info.innerHTML = informacion;
+    
+            // Añadir clase 'visible' para la animación
+            info.classList.add("visible");
+        }
+    }
+    
+
+</script>
+   
+
+
+    </form>
+</body>
+</html>

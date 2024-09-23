@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel ="stylesheet" href="InfoGrado.css">
+    <style></style>
+    
+</head>
+<body>
+    <header>
+        <h1>Pensum de Areas</h1>
+        <img src="C:/xampp2/htdocs/INEGAP/imagenes/logo.JPG" alt="Logo" class="header-image">
+
+    
+        <nav>
+            <ul>
+                <li><a href="INEGAP.html">Inicio</a></li>
+            </ul>
+        </nav>
+        </header>
+        <select id="tema">
+            <option value="seleccione">--Seleccione un grado--</option>
+            <option value="Tercero Básico">Tercero</option>
+            <option value="Segundo Básico">Segundo</option>
+            <option value="Primero Básico">Primero</option>
+           
+        </select>
+        
+        <br>
+    
+        <button onclick="mostrarInformacion()">Mostrar Información</button>
+    
+        <div id="info"></div>
+    <!-- Ventana emergente y su fondo -->
+    <div id="modal" class="modal">
+        <button class="close-btn" onclick="cerrarModal()">X</button>
+        <div id="modal-content"></div>
+    </div>
+    <div id="modal-overlay" class="modal-overlay"></div>
+
+        <script>
+           function mostrarInformacion() {
+            var temaSeleccionado = document.getElementById("tema").value;
+            var info = document.getElementById("info");
+            info.innerHTML = ""; // Limpiar el contenido previo
+
+            var cursos = [];
+            var totalPeriodos = 0;
+
+            switch (temaSeleccionado) {
+                case "Primero Básico":
+                    cursos = [
+                    { curso: "Idioma Español", periodos: 5, descripcion: "Curso de gramática, ortografía y redacción." },
+                    { curso: "Idioma Extranjero Inglés", periodos: 3, descripcion: "Lectura, escritura y conversación en inglés." },
+                        { curso: "Mecanografía", periodos: 2, descripcion: "Fundamentos de informática y tecnología." },
+                        { curso: "Matemática", periodos: 5, descripcion: "Álgebra, geometría y aritmética avanzada." },
+                        { curso: "Ciencias Naturales", periodos: 4, descripcion: "Biología y física básica." },
+                        { curso: "Ciencias Sociales y Formación Ciudadana", periodos: 4, descripcion: "Historia, cultura y formación cívica." },
+                        { curso: "Formación Musical", periodos: 2, descripcion: "Teoría musical y práctica instrumental." },
+                        { curso: "Artes Plásticas", periodos: 2, descripcion: "Dibujo, pintura y apreciación artística." },
+                        { curso: "Educación Física", periodos: 2, descripcion: "Deportes y actividades físicas." },
+                        { curso: "Área Ocupacional", periodos: 6, descripcion: "Desarrollo de habilidades ocupacionales." },
+                        { curso: "Comercio y Servicios", periodos: 1, descripcion: "Introducción al comercio y servicios básicos." },
+                        { curso: "Contabilidad", periodos: 2, descripcion: "Fundamentos de contabilidad." },
+                        { curso: "Cultura Maya, Garifuna y Xinca", periodos: 2, descripcion: "Estudios sobre las culturas indígenas." }
+                     ];
+                    totalPeriodos = 40;
+                    break;
+
+                case "Segundo Básico":
+                    cursos = [
+                    { curso: "Idioma Español", periodos: 5, descripcion: "Curso de gramática, ortografía y redacción." },
+                    { curso: "Idioma Extranjero Inglés", periodos: 3, descripcion: "Lectura, escritura y conversación en inglés." },
+                        { curso: "Tecnología de Información y Comunicación Computación", periodos: 2, descripcion: "Fundamentos de informática y tecnología." },
+                        { curso: "Matemática", periodos: 5, descripcion: "Álgebra, geometría y aritmética avanzada." },
+                        { curso: "Ciencias Naturales", periodos: 4, descripcion: "Biología y física básica." },
+                        { curso: "Ciencias Sociales y Formación Ciudadana", periodos: 4, descripcion: "Historia, cultura y formación cívica." },
+                        { curso: "Formación Musical", periodos: 2, descripcion: "Teoría musical y práctica instrumental." },
+                        { curso: "Artes Plásticas", periodos: 2, descripcion: "Dibujo, pintura y apreciación artística." },
+                        { curso: "Educación Física", periodos: 2, descripcion: "Deportes y actividades físicas." },
+                        { curso: "Área Ocupacional", periodos: 6, descripcion: "Desarrollo de habilidades ocupacionales." },
+                        { curso: "Comercio y Servicios", periodos: 1, descripcion: "Introducción al comercio y servicios básicos." },
+                        { curso: "Contabilidad", periodos: 2, descripcion: "Fundamentos de contabilidad." },
+                        { curso: "Cultura Maya, Garifuna y Xinca", periodos: 2, descripcion: "Estudios sobre las culturas indígenas." }
+                 
+                    ];
+                    totalPeriodos = 40;
+                    break;
+
+                case "Tercero Básico":
+                    cursos = [
+                        { curso: "Idioma Español", periodos: 5, descripcion: "Curso de gramática, ortografía y redacción." },
+                        { curso: "Idioma Extranjero Inglés", periodos: 3, descripcion: "Lectura, escritura y conversación en inglés." },
+                        { curso: "Tecnología de Información y Comunicación Computación", periodos: 2, descripcion: "Fundamentos de informática y tecnología." },
+                        { curso: "Matemática", periodos: 5, descripcion: "Álgebra, geometría y aritmética avanzada." },
+                        { curso: "Ciencias Naturales", periodos: 4, descripcion: "Biología y física básica." },
+                        { curso: "Ciencias Sociales y Formación Ciudadana", periodos: 4, descripcion: "Historia, cultura y formación cívica." },
+                        { curso: "Formación Musical", periodos: 2, descripcion: "Teoría musical y práctica instrumental." },
+                        { curso: "Artes Plásticas", periodos: 2, descripcion: "Dibujo, pintura y apreciación artística." },
+                        { curso: "Educación Física", periodos: 2, descripcion: "Deportes y actividades físicas." },
+                        { curso: "Área Ocupacional", periodos: 6, descripcion: "Desarrollo de habilidades ocupacionales." },
+                        { curso: "Comercio y Servicios", periodos: 1, descripcion: "Introducción al comercio y servicios básicos." },
+                        { curso: "Contabilidad", periodos: 2, descripcion: "Fundamentos de contabilidad." },
+                        { curso: "Cultura Maya, Garifuna y Xinca", periodos: 2, descripcion: "Estudios sobre las culturas indígenas." }
+                    ];
+                    totalPeriodos = 40;
+                    break;
+
+                default:
+                    info.innerHTML = "<p>Por favor, seleccione un grado.</p>";
+                    return;
+            }
+
+            var informacion = generarTabla(cursos, totalPeriodos);
+            info.innerHTML = informacion;
+
+            var tabla = document.querySelector('table');
+            tabla.classList.add('visible'); // Añadir clase para activar la animación
+        }
+        
+        function generarTabla(data, totalPeriodos) {
+            var tabla = "<table><tr><th>Curso</th><th>Cantidad de Períodos</th></tr>";
+            data.forEach(function(item, index) {
+                tabla += "<tr onclick='mostrarModal(" + index + ")'><td>" + item.curso + "</td><td>" + item.periodos + "</td></tr>";
+            });
+            tabla += "<tfoot><tr><td>Total de Períodos</td><td>" + totalPeriodos + "</td></tr></tfoot>";
+            tabla += "</table>";
+            return tabla;
+        }
+
+        // Información de los cursos para el modal
+        var cursosInfo = [
+            { curso: "Idioma Español", descripcion: "Curso de gramática, ortografía y redacción." },
+            { curso: "Matemática", descripcion: "Álgebra, geometría y aritmética básica." },
+            { curso: "Ciencias Naturales", descripcion: "Biología, física y química básicas." },
+            { curso: "Ciencias Sociales", descripcion: "Historia, geografía y cívica." },
+            { curso: "Educación Física", descripcion: "Actividades físicas y deportivas." },
+            { curso: "Idioma Extranjero Inglés", descripcion: "Lectura, escritura y conversación en inglés." },
+            { curso: "Tecnología de Información y Comunicación Computación", descripcion: "Fundamentos de informática y tecnología." },
+            { curso: "Formación Musical", descripcion: "Teoría musical y práctica instrumental." },
+            { curso: "Artes Plásticas", descripcion: "Dibujo, pintura y apreciación artística." },
+            { curso: "Área Ocupacional", descripcion: "Desarrollo de habilidades ocupacionales." },
+            { curso: "Comercio y Servicios", descripcion: "Introducción al comercio y servicios básicos." },
+            { curso: "Contabilidad", descripcion: "Fundamentos de contabilidad." },
+            { curso: "Cultura Maya, Garifuna y Xinca", descripcion: "Estudios sobre las culturas indígenas." }
+        ];
+
+        // Función para mostrar el modal con la información del curso
+        function mostrarModal(index) {
+            var modal = document.getElementById("modal");
+            var overlay = document.getElementById("modal-overlay");
+            var contenido = document.getElementById("modal-content");
+
+            contenido.innerHTML = "<h2>" + cursosInfo[index].curso + "</h2><p>" + cursosInfo[index].descripcion + "</p>";
+
+            modal.classList.add("active");
+            overlay.classList.add("active");
+        }
+
+        // Función para cerrar el modal
+        function cerrarModal() {
+            var modal = document.getElementById("modal");
+            var overlay = document.getElementById("modal-overlay");
+
+            modal.classList.remove("active");
+            overlay.classList.remove("active");
+        }
+        </script>
+    
+    
+       
+    
+    
+        </form>
+</body>
+</html>

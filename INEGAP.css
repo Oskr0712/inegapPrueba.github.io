@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e0f7fa; /* Azul claro para el fondo */
+}
+
+header {
+    position: relative; /* Permite posicionar elementos dentro del encabezado */
+    background-color: #39603d; /* Verde suave */
+    color: #ffffff; /* Texto blanco para buen contraste */
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff; /* Texto blanco */
+}
+
+main {
+    padding: 20px;
+    background-color: #ffffff; /* Fondo blanco para el contenido principal */
+    color: #333333; /* Texto gris oscuro */
+}
+
+footer {
+    background-color: #39603d; /* Verde suave */
+    color: #ffffff; /* Texto blanco */
+    text-align: center;
+    padding: 10px;
+}
+
+.cuadro {
+    border: 2px solid #2e7d32; /* Verde grisáceo oscuro para los bordes */
+    padding: 20px;
+    width: fit-content;
+    background-color: #b2dfdb; /* Azul muy claro para los cuadros */
+    margin: 10px auto;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Sombra gris suave */
+    cursor: pointer;
+    transition: all 0.5s ease; /* Suaviza todos los cambios en 0.5 segundos */
+}
+
+.cuadro:hover {
+    background-color: #a5d6a7; /* Verde claro al pasar el mouse */
+}
+
+.expandido {
+    width: 80%;
+    background-color: #a5d6a7; /* Verde claro cuando se expande */
+    padding: 40px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+    transition: all 0.5s ease; /* Animación suave para expansión */
+}
+.header-image {
+    position: absolute; /* Permite posicionar la imagen dentro del encabezado */
+    top: 20px; /* Alinea la imagen con el borde superior */
+    right: 20px; /* Alinea la imagen con el borde derecho */
+    width: auto; /* Mantiene las proporciones de la imagen */
+    height: 120px; /* Ajusta la altura de la imagen al tamaño del encabezado */
+}

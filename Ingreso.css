@@ -1,0 +1,166 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333333;
+    background-color: #f0f4f8; /* Azul muy claro */
+    animation: fadeIn 1s ease-in-out; /* Animación de entrada */
+}
+
+
+/* Encabezado */
+header {
+    background-color: #39603d; /* Verde suave y claro */
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    animation: slideDown 0.8s ease-in-out; /* Animación de desplazamiento */
+}
+
+/* Menú de navegación */
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards; /* Animación de entrada suave */
+    animation-delay: 0.5s;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #aed581; /* Verde más claro para hover */
+    animation: pulse 0.3s ease-in-out; /* Animación de resaltar con hover */
+}
+
+/* Contenido principal */
+main {
+    padding: 20px;
+    background-color: #e8f5e9; /* Verde claro apagado */
+    color: #333333; /* Texto gris oscuro */
+    opacity: 0;
+    animation: fadeIn 1.2s ease-in-out forwards; /* Animación de entrada */
+    animation-delay: 0.6s;
+}
+
+/* Pie de página */
+footer {
+    background-color: #4caf50; /* Verde más intenso */
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    animation: slideUp 0.8s ease-in-out; /* Animación de desplazamiento */
+}
+
+/* Botones */
+button {
+    color: #ffffff;
+    background-color: #64b5f6; /* Azul claro */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    opacity: 0;
+    animation: fadeIn 1.2s ease-in-out forwards;
+    animation-delay: 0.7s;
+}
+
+button:hover {
+    background-color: #90caf9; /* Azul más claro en hover */
+    transform: scale(1.05); /* Aumento de tamaño al pasar el cursor */
+}
+
+/* Selectores */
+select {
+    color: #333333;
+    background-color: #64b5f6; /* Azul claro */
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 1.2s ease-in-out forwards;
+    animation-delay: 0.8s;
+}
+
+select:hover {
+    background-color: #90caf9; /* Azul más claro en hover */
+}
+
+/* Animaciones CSS */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+/* Estilos para la animación del contenido de información */
+#info {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #e8f5e9; /* Fondo verde claro */
+    opacity: 0; /* Inicialmente invisible */
+    transform: scale(0.9); /* Inicialmente más pequeño */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transición de opacidad y escala */
+}
+
+/* Estilos cuando el contenido de info está visible */
+#info.visible {
+    opacity: 1; /* Visibilidad completa */
+    transform: scale(1); /* Escala normal */
+}
+.header-image {
+    position: absolute; /* Permite posicionar la imagen dentro del encabezado */
+    top: 20px; /* Alinea la imagen con el borde superior */
+    right: 20px; /* Alinea la imagen con el borde derecho */
+    width: auto; /* Mantiene las proporciones de la imagen */
+    height: 120px; /* Ajusta la altura de la imagen al tamaño del encabezado */
+}

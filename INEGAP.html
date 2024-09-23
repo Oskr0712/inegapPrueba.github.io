@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href= "INEGAP.css">
+    <style>
+       
+        .INEGAP {
+            font-family: 'Arial', sans-serif;
+            font-size: 24px;
+            line-height: 1.4;
+            text-align: center;
+            margin: 20px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header> <h1>Instituto Nacional Experimental Gabriel Arriola Porres</h1>
+        <img src="C:/xampp2/htdocs/INEGAP/imagenes/logo.JPG" alt="Logo" class="header-image">
+        <nav>
+            <ul>
+                <li><a href="info.html">Información</a></li>
+                <li><a href="Ingreso.html">Talleres</a></li>
+                <li><a href="infoGrado.html">Info de grados</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="contactos.html">Contactos/Redes Sociales</a></li>
+                <li><a href="admisiones.html">Admisiones</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+       <h1>Bienvenidos a la página oficial del Instituto Nacional Experimental Gabriel Arriola Porres, INEGAP, </h1>
+       <h2>Nuestra Visión</h2>
+       <p class="vision" onclick="expandir('vision')">Ser una institución educativa líder en el país, en los procesos de formación científica, técnica, 
+        de orientación al trabajo y de valores y principios morales de sus estudiantes; contribuyendo así a su
+        éxito personal, familiar y al desarrollo sociocultural y económico del país.</p>
+        <h2>Nuestra Misión</h2>
+        <p class="mision" onclick="expandir('mision')">Somos una Institución Educativa incluyente, innovadora y proactiva, comprometida en desarrollar la 
+            tarea de formación de los estudiantes con calidad y mejoras continuas, a fin de dotarlos de 
+            conocimientos, destrezas y herramientas que le permitan alcanzar un adecuado desempeñó en su 
+            proyecto de vida y su máximo potencial, fundamentados en la práctica de valores y respeto a los
+            derechos humanos.</p>
+            <h2>Sobre Nosotros</h2>
+            <p class="nosotros" onclick="expandir('nosotros')">El Instituto Nacional Experimental “Gabriel Arriola Porres”, fue creado por decreto del dos de 
+                abril de 1875, durante el gobierno federal del General Justo Rufino Barrios, siendo su primer 
+                nombre “Escuela de Artes y oficios para Varones de Occidente”, con sede en el municipio y 
+                departamento de Quetzaltenango y siendo el cuarto establecimiento de nivel medio creado y 
+                fundado en la ciudad.</p>
+    </main>
+    <footer>
+        INEGAP
+    </footer>
+    <script>
+        function expandir(seccion) {
+            const elementos = document.querySelectorAll('.cuadro');
+            elementos.forEach(elemento => {
+                if (elemento.classList.contains('expandido') && !elemento.classList.contains(seccion)) {
+                    elemento.classList.remove('expandido');
+                }
+            });
+
+            const elemento = document.querySelector(`.${seccion}`);
+            elemento.classList.toggle('expandido');
+        }
+    </script>
+
+</body>
+</html>

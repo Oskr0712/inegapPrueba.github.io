@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Ingreso.css">
+</head>
+<body>
+    <header>
+        <h1>Admisiones</h1>
+        <img src="C:/xampp2/htdocs/INEGAP/imagenes/logo.JPG" alt="Logo" class="header-image">
+        <nav>
+            <ul>
+                <li><a href="INEGAP.html">Inicio</a></li>
+            </ul>
+        </nav>
+        </header>
+        <select id="tema">
+            <option value="">--Seleccione el tipo de ingreso al establecimiento--</option>
+            <option value="Nuevo">Nuevo Ingreso</option>
+            <option value="Re">Reingreso</option>
+            <option value="Otro">Ingreso desde otro establecimiento experimental</option>
+           
+        </select>
+        
+        <br>
+    
+        <button onclick="mostrarInformacion()">Mostrar Información</button>
+    
+        <div id="info"></div>
+    <script>
+        function mostrarInformacion() {
+            var temaSeleccionado = document.getElementById("tema").value;
+            var info = document.getElementById("info");
+            info.innerHTML = ""; // Limpiar el contenido previo
+        
+            // Si no se selecciona un taller, mostrar un mensaje
+            if (temaSeleccionado === "") {
+                info.innerHTML = "<p>Por favor, seleccione un taller.</p>";
+            } else {
+                var informacion;
+        
+                switch (temaSeleccionado) {
+                    case "Re":
+                        informacion = "<h2></h2><p>El alumno podrá ingresar sin necesidad de realizar el examen de admisión</p>";
+                        break;
+                    case "Otro":
+                        informacion = "<h2></h2><p>En el caso de haber estudiado en algún otro instituto EXPERIMENTAL, el alumno no requerirá la realización de el examen de admisión para ingresar al establecimiento</p>";
+                        break;
+                    case "Nuevo":
+                        informacion = "<h2></h2><p>El alumno deberá realizar la prueba de admisión para poder ingresar al establecimiento, esta prueba es unicamente hacia los alumnos de primer ingreso al grado de primero básico, ya que en segundo ni en tercero se aceptan alumnos nuevos, salvo que sean alumnos de algún otro instituto experimental, para más información del examen de admisión de click al sigueinte link</p> <a href= infoAdmin.html>Información sobre el examen de admisión</a>";
+                        
+                        break;
+                    
+                }
+        
+                info.innerHTML = informacion;
+        
+                // Añadir clase 'visible' para la animación
+                info.classList.add("visible");
+            }
+        }
+        
+    
+    </script>
+       
+    
+    
+        </form>
+
+</body>
+</html>
